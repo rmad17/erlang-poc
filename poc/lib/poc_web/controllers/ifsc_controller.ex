@@ -2,6 +2,9 @@
 defmodule PocWeb.IfscController do
   use PocWeb, :controller
 
+  def save_data(data) do
+  end
+
   def index(conn, _params) do
     url = "https://ifsc.razorpay.com/" <> _params["ifsc_code"]
     response = HTTPoison.get!(url)
@@ -9,4 +12,5 @@ defmodule PocWeb.IfscController do
     conn
     |> json(body)
   end
+
 end
